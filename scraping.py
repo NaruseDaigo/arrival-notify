@@ -1,3 +1,4 @@
+from credential import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
 import requests
 from bs4 import BeautifulSoup
 import time
@@ -5,15 +6,9 @@ import sys
 import datetime
 import tweepy
 
-#twitterのアクセスキー
-consumer_key ="131CgNs8FehB5ydPH9Zxh4e5l"
-consumer_secret ="F8BYtKntFMlr27LqcVafmWiUNHzFHtUJjbNXyZTaiTaU9ZewLz"
-access_token="1186167005092532224-9nWHbabCA5D1fcVLBPl1Ncgt2tmDwb"
-access_token_secret ="odSVQZtPVcgSx2tVUbiB2T7jvcEUmEtGmqKNOKPJg61rJ"
-
 # Twitterオブジェクトの生成
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 #  PCから接続
@@ -59,9 +54,10 @@ def rakuten_run():
 
         tweet += f"URL: {page['url']}\n"
         tweet += f"時刻: {now_time}\n #PS5 #PlayStation5 #PS5抽選 #PS5予約"
-        print(tweet)
+        # print(tweet)
         #  tweetを投稿
-        #api.update_status(tweet)
+        if result == 1:
+            api.update_status(tweet)
 
 if __name__ == "__main__":
     rakuten_run()
