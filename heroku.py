@@ -10,7 +10,7 @@ def main():
     api = tweepy.API(auth)
 
 
-    tw = "現在の時刻をお知らせします。\n"
+    tw = "現在のアメリカの時刻をお知らせします。\n"
     tw += datetime.datetime.now().strftime('%H:%M:%S')
     api.update_status(tw)
 
