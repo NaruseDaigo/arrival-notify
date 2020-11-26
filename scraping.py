@@ -65,7 +65,3 @@ def rakuten_run():
 
 if __name__ == "__main__":
     rakuten_run()
-    #amazon_run()
-"""	while True:
-		rakuten_run()
-		time.sleep(60)"""

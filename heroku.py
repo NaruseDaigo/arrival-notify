@@ -9,11 +9,10 @@ def main():
     auth.set_access_token(ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
     api = tweepy.API(auth)
 
-    while True:
-        tw = "現在の時刻をお知らせします。\n"
-        tw += datetime.datetime.now().strftime('%H:%M:%S')
-        api.update_status(tw)
-        time.sleep(10)
+
+    tw = "現在の時刻をお知らせします。\n"
+    tw += datetime.datetime.now().strftime('%H:%M:%S')
+    api.update_status(tw)
 
 if __name__ == "__main__":
     main()
