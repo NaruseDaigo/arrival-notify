@@ -22,8 +22,8 @@ def tweet(item, url):
     tweet += f"「{item}」が入荷されました\n"
     tweet += f"URL: {url}\n"
     tweet += f"時刻: {now_time}\n#PS5 #PlayStation5 #PS5抽選 #PS5予約"
-    print(tweet)
-    # api.update_status(tweet)
+    # print(tweet)
+    api.update_status(tweet)
 
 def rakutenbooks_check(url):
     res = requests.get(url ,headers=HEADERS)
