@@ -12,7 +12,9 @@ auth.set_access_token(ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 #  PCから接続
-HEADERS = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36", "Accept-Language": "ja,en-US;q=0.9,en;q=0.8"}
+HEADERS = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36", \
+           "Accept-Language": "ja"
+        }
 
 def tweet(item, url):
     #  Tweetする時刻の設定
@@ -22,8 +24,8 @@ def tweet(item, url):
     tweet += f"「{item}」が入荷されました\n"
     tweet += f"URL: {url}\n"
     tweet += f"時刻: {now_time}\n#PS5 #PlayStation5 #PS5抽選 #PS5予約"
-    # print(tweet)
-    api.update_status(tweet)
+    print(tweet)
+    # api.update_status(tweet)
 
 def rakutenbooks_check(url):
     res = requests.get(url ,headers=HEADERS)
