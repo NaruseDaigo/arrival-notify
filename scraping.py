@@ -88,7 +88,7 @@ def amazon_run():
 if __name__ == "__main__":
     time_counter = 0
     while time_counter <= 540:
-        rakuten_run()
+        # rakuten_run()
         amazon_run()
         time_counter += 60
         time.sleep(60)
